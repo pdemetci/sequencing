@@ -1,4 +1,4 @@
-models = cb_obj.document._all_models_by_name._dict
+smodels = cb_obj.document._all_models_by_name._dict
 
 lines = (v for k, v of models when k.startsWith('line_'))
 
