@@ -941,21 +941,20 @@ if __name__ == "__main__":
     opts=parser.parse_args()
     
     filename=opts.file[0]
-    
     ## Getting the optional arguments:
     #Note: Turns out bool('False') does not return False in python. It only returns False if the string is empty.
-    if opts.heatmap and opts.heatmap[0] == 'True':
+    if opts.heatmap and str(opts.heatmap[0]).lower() == 'true':
         heatmap=True
     else:
         heatmap=False
 
-    if opts.log and opts.log[0] =='True':
+    if opts.log and str(opts.log[0]).lower() =='true':
         log=True
     else:
         log=False
 
     if opts.colorby:
-        if str(opts.colorby[0]) == 'None':
+        if str(opts.colorby[0]).lower() == 'none':
             colorby=None
         else:
             colorby=str(opts.colorby[0])
